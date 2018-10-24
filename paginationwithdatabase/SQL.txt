@@ -1,0 +1,70 @@
+create database Shubhada;
+
+use shubhada;
+
+create table Movies(
+Id int NOT NULL Primary Key,
+Title varchar(100),
+Descriptn varchar(255),
+Featured_Image varchar(255),
+Movie_Length_in_mins int,
+Movie_Release_Date varchar(50));
+
+create table Category(
+Id int NoT NULL Primary Key,
+`Type` varchar(50),
+`Value` varchar(50)
+);
+
+
+create table Relationship(
+Id int Not Null Primary Key,
+CategoryID int, 
+MovieID int,
+FOREIGN KEY(MovieID) REFERENCES Movies(Id),
+FOREIGN KEY(CategoryID) REFERENCES Category(Id)
+);
+
+insert into Movies values(1,"Pulp Fiction","Crime,Drama","PulpFiction.jpeg",154,1994);
+insert into Movies values(2,"The Amazing Spider-Man2","Action,Adventure,Scie-Fi","SpiderMan2.jpeg",142,2014);
+insert into Movies values(3,"The Shawshank Redemption","Drama","Shawshank.jpeg",142,2014);
+insert into Movies values(4,"Star Wars: Episode IV-A new Hope","Action,Adventure,Fantasy","StarWars.jpeg",121,1977);
+insert into Movies values(5,"Back to the Future","Adventure,Comedy,Sci-Fi","BackToFuture.jpeg",116,1985);
+insert into Movies values(6,"The Breakfast Club","Comedy,Drama","BreakfastClub.jpeg",97,1985);
+insert into Movies values(7,"The Goonies","Adventure,Comedy,Family","Goonies.jpeg",114,1985);
+insert into Movies values(8,"The Silence of the Lambs","Crime,Drama,Thriller","SilenceOftheLambs.jpeg",118,1991);
+insert into Movies values(9,"Jurassic Park","Adventure,Sci-Fi,Thriller","JurassicPark.jpeg",127,1993);
+insert into Movies values(10,"The Lion King","Animation,Adventure,Drama","TheLionKing.jpeg",88,1994);
+insert into Movies values(11,"Se7en","Crime,Drama,Mystery","Se7en.jpeg",127,1995);
+insert into Movies values(12,"ToyStory","Animation,Adventure,Comedy","ToyStory.jpeg",81,1995);
+insert into Movies values(13,"TheBigLebowski","Comedy,Crime","BigLebowski.jpeg",117,1998);
+insert into Movies values(14,"Saving Private Ryan","Drama,War","SavingPrivateRyan.jpeg",169,1998);
+insert into Movies values(15,"Fight Club","Drama","FightClub.jpeg",139,1999);
+insert into Movies values(16,"The Matrix","Action,Sci-Fi","TheMatrix.jpeg",136,1999);
+insert into Movies values(17,"Star Wars:Episode I-The Phantom Menace","Action,Adventure,Fantasy","StarWars.jpeg",136,1999);
+insert into Movies values(18,"Gladiator","Action,Adventure,Drama","Gladiator.jpeg",155,2000);
+insert into Movies values(19,"X-Men","Action,Adventure,Sci-Fi","XMen.jpeg",104,2000);
+insert into Movies values(20,"Harry Potter and the Sorcerer's Stone","Adventure,Family,Fantasy","HarryPotter.jpeg",152,2001);
+insert into Movies values(21,"The Lord of the Rings: The Fellowship of the Ring","Adventure,Drama,Fantasy","TheLordOftheRings.jpeg",178,2001);
+insert into Movies values(22,"Naarbachi Wadi","Family,Comedy","Naarba.jpeg",160,2000);
+insert into Movies values(23,"Parmaanu","National","Parmaanu.jpeg",140,2015);
+
+
+insert into Category values(1,"Genre","Drama");
+insert into Category values(2,"Language","English");
+insert into Category values(3,"Genre","Scie-Fi");
+insert into Category values(4,"Language","Marathi");
+insert into Category values(5,"Language","Hindi");
+insert into Category values(6,"Genre","Adventure");
+insert into Category values(7,"Genre","Comedy");
+insert into Category values(8,"Genre","National");
+insert into Category values(9,"Genre","Family");
+insert into Category values(10,"Genre","Comedy");
+insert into Category values(11,"Genre","Action");
+
+
+insert into Relationship values(1,1,1);
+insert into Relationship values(2,2,6);
+insert into Relationship values(3,3,1);
+insert into Relationship values(4,4,6);
+insert into Relationship values(5,5,3);
